@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO supply a title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Votre style CSS ici -->
+    <style>*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	background: url(https://res.cloudinary.com/dejzo3x6l/image/upload/v1462601848/login%20page%20design/material-design-1080p-wallpaper_1.jpg) no-repeat center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.container{
+	width: 500px;
+	height: 400px;
+	margin: 0px auto;
+	margin-top: 100px;
+	text-align: center;
+	background-color: rgba(95, 158, 160, 0.43);
+}
+
+.container img{
+	width: 120px;
+	height: 120px;
+	margin-top:-50px;
+	margin-bottom: 50px;
+}
+
+input[type="text"],input[type="password"]{
+	width: 250px;
+	height: 30px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	font-size: 17px;
+}
+
+.input_box::before{
+	content:url(https://res.cloudinary.com/dejzo3x6l/image/upload/v1462601843/login%20page%20design/user.png);
+	position: absolute;
+	padding: 3.2px;
+	background-color: rgba(219, 116, 40, 0.33);
+}
+
+.input_box:nth-child(3)::before{
+	content:url(https://res.cloudinary.com/dejzo3x6l/image/upload/v1462601842/login%20page%20design/lock.png);
+}
+.submit_btn{
+	background-color:rgb(214, 119, 49);
+	font-size: 20px;
+	padding:10px 30px;
+	border: none;
+	letter-spacing: 2px;
+	transition: background-color .2s;
+	margin-bottom: 10px;
+}
+.submit_btn:hover{
+	background-color:rgb(247, 136, 55);
+	cursor: pointer;
+}
+
+a.for_pass{
+	color: #d1cfcf;
+}
+a.for_pass:hover{
+	color:white;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" onsubmit="login(event)">
+            <img src="https://res.cloudinary.com/dejzo3x6l/image/upload/v1462601844/login%20page%20design/3.png" alt="Profile-pic"/>
+            <div class="input_box">
+                <input type="text" id="username" name="username" placeholder="User Name" required="true"/>
+            </div>
+            <div class="input_box">
+                <input type="password" id="password" name="password" placeholder="Password" required="true"/>
+            </div>
+            <input type="submit" name="submit" value="Login" class="submit_btn"/>
+            <a href="#" class="for_pass">Forgot Password</a>
+        </form>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault(); // Pour empêcher le comportement de soumission par défaut du formulaire
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Vérification des identifiants
+            if (username === 'adnan') {
+                if (password === '1234') {
+                    // Redirection vers la page employe.xhtml
+                    window.location.href = 'employe.xhtml';
+                } else {
+                    alert('Mot de passe incorrect. Veuillez réessayer.');
+                }
+            } else {
+                alert('Nom d\'utilisateur incorrect. Veuillez réessayer.');
+            }
+        }
+    </script>
+</body>
+</html>

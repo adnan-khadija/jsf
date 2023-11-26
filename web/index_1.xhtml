@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                <h:form>
+                    <p:panelGrid columns="4">
+                        <p:clock pattern="dd/MM/yyyy" />
+                        <p:clock pattern="hh:mm:ss" />
+                        <p:outputLabel value="Select Calendar"/>
+                        <p:calendar id="cal"  navigator="true" />
+                    </p:panelGrid>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                Footer
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="250" header="Menu" collapsible="true">
+                <h:form>
+                    <p:menu>
+                        <p:submenu label="Navigations">
+                            <p:menuitem value="Employes" outcome="employe.xhtml" icon="ui-icon-star"/>
+                            <p:menuitem value="Service" outcome="service.xhtml" icon="ui-icon-star"/>
+                            <p:menuitem value="Chef" outcome="chef.xhtml" icon="ui-icon-star"/>                                                               
+                            <p:menuitem value="Statistiques" outcome="statistiques.xhtml" icon="ui-icon-star"/>
+
+                        </p:submenu>
+                    </p:menu> 
+                </h:form>
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+                <p:panel header="Statistiques">
+                    <h:form>
+                        <p:outputLabel value="Service" style="font-family: inherit; font-size: large;"/>
+                        <p:selectOneMenu value="#{employeeBean.employee.service.id}" required="true" style="width: 23%">
+                            <f:selectItem itemLabel="Select le service" itemValue=""/>
+                            <f:selectItems value="#{serviceBean.services}" var="s"
+                                           itemLabel="#{s.nom}" itemValue="#{s.id}"/>                               
+                        </p:selectOneMenu>
+                        <p:commandButton value="Afficher les collaborateurs" action="#{serviceBean.chef()}" update="collaborateursPanel" />
+
+                        <p:panel id="collaborateursPanel" header="Collaborateurs du service">
+                            <h:outputText value="Service : #{serviceBean.service.nom}" />
+                            <h:outputText value=" Chef de Service : #{serviceBean.chef()}" />
+                            <h:outputText value=" Collaborateurs sous la responsabilité du chef : " />
+
+                            <ul>
+                                <ui:repeat value="#{serviceBean.service.employes}" var="employe">
+                                    <li>#{employe.nom + " " + employe.prenom}</li>
+                                </ui:repeat>
+                            </ul>
+                        </p:panel>
+                    </h:form>
+                </p:panel>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

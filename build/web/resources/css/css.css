@@ -1,0 +1,68 @@
+.commandbutton{
+  transition-duration: 0.4s;
+}
+
+.commandbutton:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+.label{
+   font-size: large; 
+   color: #04AA6D;
+}
+/* css.css */
+
+/* Style pour les éléments de formulaire */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 200px;
+}
+
+/* Style pour la table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
