@@ -1,17 +1,20 @@
-# Gestion des Employés avec Java Server Faces (JSF) et PrimeFaces
-Ce projet est une application web de gestion des employés développée en utilisant Java Server Faces (JSF) et PrimeFaces.
-L'objectif principal de l'application est de permettre aux utilisateurs de gérer les informations sur les employés d'une entreprise,
-y compris leurs noms, prénoms, date de naissance, service, chef hiérarchique, et photo.
-# Fonctionnalités Principales
-Ajout, modification et suppression des employés.
-Attribution des employés à des services spécifiques.
-Affichage des collaborateurs sous la responsabilité de chaque chef de service.
-# Technologies Utilisées
- Java EE.
- PrimeFaces.
-XHTML/CSS/JavaScript
- MySQL
-Hibernate
+# Gestion des Employés avec Java Server Faces (JSF) et PrimeFaces  
+Ce projet est une application web de gestion des employés développée en utilisant Java Server Faces (JSF) et PrimeFaces.  
+L'objectif principal de l'application est de permettre aux utilisateurs de gérer les informations sur les employés d'une entreprise,  
+y compris leurs noms, prénoms, date de naissance, service, chef hiérarchique, et photo.  
+
+# Fonctionnalités Principales  
+Ajout, modification et suppression des employés.  
+Attribution des employés à des services spécifiques.  
+Affichage des collaborateurs sous la responsabilité de chaque chef de service.  
+
+# Technologies Utilisées  
+Java EE.  
+PrimeFaces.  
+XHTML/CSS/JavaScript.  
+MySQL.  
+Hibernate.
+
 # Base de donnés
 ![image](https://github.com/adnan-khadija/jsf/assets/147508009/105cd591-429f-45e5-be53-037709b953f1)
 # Page Login
